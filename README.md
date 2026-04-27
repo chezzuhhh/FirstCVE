@@ -1,5 +1,5 @@
 # CVE-2026-xxxx
----
+
 
 **CVE ID:** Pending
 
