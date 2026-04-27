@@ -47,7 +47,7 @@ Necessities:
 	- **Result:** Decrypted HTTPS traffic originating from and destined to the doorbell is fully visible and editable in the proxy.
 
 Showcase of the captured flows:
-
+<img width="1800" height="640" alt="mitmProxy" src="https://github.com/user-attachments/assets/d0e53b3b-edfc-4c09-b2e3-b8e40f8ecc55" />
 
 
 ## Recommended Mitigation:
