@@ -1,4 +1,4 @@
-# Simple custom bash script to setup an access point/mitm environment
+# Custom bash script to setup an access point/mitm environment
 
 #!/bin/bash
 
