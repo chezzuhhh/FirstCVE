@@ -1,5 +1,6 @@
 # CVE-2026-xxxx
 ---
+
 **CVE ID:** Pending
 
 **Problem Type:** CWE-295 (Improper Certificate Validation)
@@ -16,17 +17,16 @@
 
 
 ## Summary
----
 The CloudEdge Bell 24T fails to properly validate SSL/TLS certificates when communicating with its backend cloud infrastructure. The absence of certificate pinning and chain validation in the firmware allows an attacker to intercept, decrypt, and manipulate 'secure' HTTPS communications to port 443 via a Man-in-the-Middle (MitM) attack.
 
+
 ## Impact
----
 By routing the device's traffic through a rogue wireless access point paired with a transparent proxy, an attacker can completely compromise the confidentiality and integrity of the device-to-cloud communication stream. 
 - **Information Disclosure:** Silent interception of video feeds, account identifiers, session tokens, and potentially plaintext credentials.
 - **Data Modification:** Tampering with API requests and responses (e.g., spoof status events, inject custom payloads, utilize paid features without payment, or modify device configuration states).
 
+
 ## Reproduction (PoC)
----
 Necessities:
 - CloudEdge Bell 24T doorbell.
 - An interception proxy capable of presenting a self-signed certificate (mitmproxy).
@@ -47,11 +47,9 @@ Necessities:
 	- **Result:** Decrypted HTTPS traffic originating from and destined to the doorbell is fully visible and editable in the proxy.
 
 Showcase of the captured flows:
-![[Pasted image 20260424231826.png]]
-Detailed look into a POST request:
-![[Pasted image 20260424232108.png]]
+
+
 
 ## Recommended Mitigation:
----
 - **Certificate Validation:** The firmware must be updated to enforce strict validation of the SSL/TLS certificate chain against a trusted root CA store.
 - **Certificate Pinning:** Implement public key or certificate pinning for all communications between the physical device and the Meari Technologies backend APIs to explicitly reject arbitrary or self-signed certificates.
