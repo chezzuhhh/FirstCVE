@@ -1,3 +1,5 @@
+# Simple script used to convert .mitm data to json
+
 # Flow:
 #   opens a .mitm file and reads the captured flows (requests/responses)
 #   extracts the raw state data from each flow
