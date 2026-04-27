@@ -46,7 +46,7 @@ Necessities:
 	- **Observation:** The doorbell does not drop the connection upon receiving the proxy's untrusted, self-signed certificate. The TLS handshake completes successfully without triggering any certificate pinning or chain validation failure routines.
 	- **Result:** Decrypted HTTPS traffic originating from and destined to the doorbell is fully visible and editable in the proxy.
 
-Showcase of the captured flows:
+Showcase of the captured flows using mitmproxy:
 <img width="1800" height="640" alt="mitmProxy" src="https://github.com/user-attachments/assets/d0e53b3b-edfc-4c09-b2e3-b8e40f8ecc55" />
 
 
